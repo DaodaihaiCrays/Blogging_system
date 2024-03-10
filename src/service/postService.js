@@ -14,7 +14,8 @@ var connection
 
 const createPostService = async(post) => {
   const id = uuidv4();
-
+  if(post.title.length == 0 || post.categoryId.length == 0 || post.userId.length == 0 || post.content.length == 0)
+    return 0
   const [results, fields] = await connection.query(
       `insert into Post(id, title, content, categoryId, userId)
        values (?, ?, ?, ?, ?)`,
@@ -25,7 +26,8 @@ const createPostService = async(post) => {
 }
 
 const getSinglePostService = async(id) => {
- 
+  if(id.id.length == 0 )
+    return null
   const [results, fields] = await connection.query(
       `select * from Post  
       where id = ?`,
@@ -44,7 +46,8 @@ const getAllPostService = async() => {
 }
 
 const deletePostService = async(id) => {
- 
+  if(id.id.length == 0 )
+    return 0
   const [results, fields] = await connection.query(
       `delete from Post where id = ?`,
       [id.id]  
@@ -53,7 +56,8 @@ const deletePostService = async(id) => {
 }
 
 const updatePostService = async(post) => {
- 
+  if(post.title.length == 0 || post.categoryId.length == 0 || post.userId.length == 0 || post.content.length == 0)
+    return 0
   const [results, fields] = await connection.query(
       `update Post
        set  title = ? , content = ? , categoryId = ?, userId = ?

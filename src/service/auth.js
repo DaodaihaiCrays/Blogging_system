@@ -24,6 +24,9 @@ const validatePassword = async function(inputPassword, password) {
 
 const Register = async(data) => {
     const saltRounds = 10;
+    if(data.name.length == 0 || data.password.length == 0)
+        return 0
+    
     if(validateEmail(data.email)) {
         const [select, _] = await connection.query(
             `select * from User  

@@ -16,7 +16,7 @@ const uploadController = async(req, res) => {
 
     const result = await createUploadImageService(req.files, req.body.postId, userId)
 
-    if(result)
+    if(result!=null)
         return res.status(200).json({
             error: {
                 code: 200,

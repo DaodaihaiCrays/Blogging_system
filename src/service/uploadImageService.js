@@ -13,9 +13,8 @@ var connection
 })()
 
 const createUploadImageService = async(images, postId, userId) => {
-    
-    let check = true
-    
+    if(postId.length == 0 || userId.length == 0)
+        return null
     for(let i = 0 ;i<images.length; i++) {
         try {
             const id = uuidv4();
