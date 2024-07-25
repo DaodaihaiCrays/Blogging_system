@@ -56,6 +56,7 @@ routerAPI.put('/comment', checkAuthController, updateCommentController)
 routerAPI.post('/auth-register',RegisterController)
 routerAPI.post('/auth-login', LoginController)
 
+//'image' là tên trường có kiểu file
 routerAPI.post('/upload', checkAuthController, upload.array('image',3), uploadController)
 
 

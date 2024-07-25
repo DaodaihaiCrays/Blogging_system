@@ -50,8 +50,7 @@ const checkAuthController = async(req,res,next) => {
         const token = req.headers.authorization.split(" ")[1]
         const decodeToken = jwt.verify(token, process.env.JWT_KEY)
         req.userData = decodeToken
-        console.log(decodeToken)
-        console.log("========")
+      
         next()
     } catch (error) {
         return res.status(400).json({

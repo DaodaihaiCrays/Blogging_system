@@ -6,6 +6,7 @@ const storage = multer.diskStorage({
         cb(null, './src/upload')
     },
     filename: (req, file, cb) => {
+        // file này là file trong trường image của body khi gửi lên
         cb(null, new Date().getTime() + path.extname(file.originalname))
     }
 })
