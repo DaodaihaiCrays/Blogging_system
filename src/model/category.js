@@ -1,6 +1,8 @@
-function Category() {
-    this.id = ""
-    this.name = ""
+class Category {
+    constructor(id = "", name = "") {
+        this.id = id;
+        this.name = name;
+    }
 }
 
-module.exports = Category
+module.exports = Category;

@@ -1,16 +1,17 @@
 const { v4: uuidv4 } = require('uuid');
-const connectionPromise = require('../config/database')
-var connection
-;(async () => {
-    try{
+// const connectionPromise = require('../config/database')
+const connection = require('../config/database')
+// var connection
+// ;(async () => {
+//     try{
       
-       connection = await connectionPromise
+//        connection = await connectionPromise
 
-    } catch(error) {
-      console.log(error)
-    }
+//     } catch(error) {
+//       console.log(error)
+//     }
     
-})()
+// })()
 
 const createUploadImageService = async(images, postId, userId) => {
     if(postId.length == 0 || userId.length == 0)
