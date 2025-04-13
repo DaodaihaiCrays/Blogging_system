@@ -10,4 +10,4 @@
 - jsonwebtoken  
 - bcrypt  
 - multer  
-- MySQL.
+- MySQL
